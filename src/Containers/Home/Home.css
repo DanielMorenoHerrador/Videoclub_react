@@ -1,0 +1,39 @@
+body {
+    background-color: yellow;
+}
+
+.loader {
+    
+    height: 40em;
+    width: 70em;
+}
+
+.displayPeliculas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1em 20em 1em 20em;
+    background-color: yellow;
+}
+
+.peli {
+    border-radius : 2em;
+    background-color: blue;
+    border: 0.1em solid black;
+    margin: 0.1em;
+}
+
+.cartel {
+    height: 15em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border: 0.1em solid black;
+    border-radius : 1em;
+    cursor: pointer;
+}
+
+.designTitlemovie {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}

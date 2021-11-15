@@ -1,0 +1,90 @@
+
+
+.barranav {
+    height: 5em;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: black;
+}
+  
+.Home {
+    height: 5em;
+    width: 10em;
+    background-color: transparent;
+    color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+  
+.Peliculas {
+    height: 5em;
+    width: 10em;
+    background-color: transparent;
+    color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tit {
+  height: 5em;
+  width: 50em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5em;
+  cursor: pointer;
+}
+
+.Registro {
+  height: 5em;
+  width: 10em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.Login {
+  height: 5em;
+  width: 10em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.Perfil {
+  height: 5em;
+  width: 10em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logo {
+  height: 1em;
+  cursor: pointer;
+}
