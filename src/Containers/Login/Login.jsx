@@ -21,6 +21,10 @@ const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
+    useEffect (()=>{
+        console.log(credentials)
+    },[credentials])
+
     const logeame = async () => {
 
 
@@ -28,6 +32,7 @@ const Login = (props) => {
             email: credentials.email,
             password: credentials.password
         };
+        console.log("Soy el body", body)
 
         try {
 
@@ -41,16 +46,15 @@ const Login = (props) => {
             //Guardar en redux
             let datos =res.data;
             props.dispatch({type:LOGIN,payload:datos})
+            console.log(res.data)
 
-            
-
-            // setTimeout(() => {
-            //     history("/profile");
-            // }, 4000);
+            setTimeout(() => {
+                history("/profile");
+            }, 2000);
 
 
         } catch (error) {
-            setmsgError(error);
+            console.log(error);
 
         }
 
@@ -61,8 +65,8 @@ const Login = (props) => {
 
         <div className="designLogin">
             {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
-            <input type='email' name='correo' title='correo' onChange={manejadorInputs} lenght='30' />
-            <input type='password' name='clave' title='clave' onChange={manejadorInputs} lenght='30' />
+            <input type='email' name='email' title='correo' onChange={manejadorInputs} lenght='30' />
+            <input type='password' name='password' title='clave' onChange={manejadorInputs} lenght='30' />
             <div className="sendButton" onClick={() => logeame()}>Login</div>
             <div className="error">{msgError}</div>
         </div>

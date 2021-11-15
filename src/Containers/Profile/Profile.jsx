@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
@@ -6,8 +6,10 @@ import { LOGOUT, UPDATE_USER } from '../../redux/types';
 
 const Profile = (props) => {
 
+    const history = useNavigate();
+
     //Hook para los input
-    const [userData, setUserData] = useState(props.credentials.usuario);
+    const [userData, setUserData] = useState(props.credentials.user);
 
 
     //Funcion para manejar el estado de los input
@@ -22,11 +24,12 @@ const Profile = (props) => {
     //Funcion para que limpie los datos de perfil de redux y asi deslogearse
     const logOut = () => {
         props.dispatch({ type: LOGOUT });
+        history("/");
     }
 
 
     useEffect(() => {
-        setUserData(props.credentials.usuario);
+        setUserData(props.credentials.user);
     }, [props.credentials]);
 
 
@@ -35,7 +38,6 @@ const Profile = (props) => {
             console.log("Estas en perfil"),
             <div className="designProfile">
                 <div className="user"><input value={userData?.name || false} name="name" onChange={manejaInputs} /></div>
-                <div className="user"><input value={userData?.surname || false} name="surname" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.city || false} name="city" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.email || false} name="email" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.phone || false} name="phone" onChange={manejaInputs} /></div>

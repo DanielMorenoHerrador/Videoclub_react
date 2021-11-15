@@ -12,7 +12,6 @@ const Register = () => {
     const [msgError, setmsgError] = useState("");
     const [user, setUser] = useState({
         name: '',
-        surname: '',
         dni: '',
         email: '',
         address: '',
