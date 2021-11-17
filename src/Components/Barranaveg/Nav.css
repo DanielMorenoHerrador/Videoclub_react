@@ -8,12 +8,13 @@
     align-items: center;
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: solid;
     border-color: black;
 }
   
 .Home {
     height: 5em;
-    width: 10em;
+    width: 18em;
     background-color: transparent;
     color: yellow;
     display: flex;
@@ -37,7 +38,7 @@
 
 .tit {
   height: 5em;
-  width: 50em;
+  width: 40em;
   background-color: transparent;
   color: yellow;
   display: flex;
@@ -45,12 +46,11 @@
   align-items: center;
   justify-content: center;
   font-size: 3.5em;
-  cursor: pointer;
 }
 
 .Registro {
   height: 5em;
-  width: 10em;
+  width: 15em;
   background-color: transparent;
   color: yellow;
   display: flex;
@@ -62,7 +62,7 @@
 
 .Login {
   height: 5em;
-  width: 10em;
+  width: 15em;
   background-color: transparent;
   color: yellow;
   display: flex;
@@ -74,7 +74,7 @@
 
 .Perfil {
   height: 5em;
-  width: 10em;
+  width: 15em;
   background-color: transparent;
   color: yellow;
   display: flex;
@@ -86,5 +86,28 @@
 
 .logo {
   height: 1em;
+}
+
+.Pedidos {
+  height: 5em;
+  width: 15em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.PeliculasDisponibles {
+  height: 5em;
+  width: 25em;
+  background-color: transparent;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }

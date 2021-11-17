@@ -2,9 +2,10 @@
 import React, {useState, useEffect} from 'react';
 
 import axios from 'axios';
-import cargando from '../../assets/img/cargando.gif';
+import loading from '../../assets/img/loading.gif';
 import {useNavigate} from 'react-router-dom';
 import './Home.css';
+import { PELICULA_SELECCIONADA } from '../../redux/types';
 
 const Home = () => {
 
@@ -18,7 +19,7 @@ const Home = () => {
         setTimeout(()=>{
             
             traePeliculas();
-        },4000);
+        },2000);
 
         
 
@@ -33,12 +34,11 @@ const Home = () => {
         setPeliculas(res.data.results);
     };
 
-    const escogePelicula = (peliculaEscogida) => {
-        localStorage.setItem("choosenFilm", JSON.stringify(peliculaEscogida));
+    const escogePelicula = () => {
         
-
+        
         //redirigire a el perfil de la película....
-        navigate("/profile");
+        navigate("/Perfilpelicula");
     }
 
     if(peliculas[1]?.title){
@@ -51,6 +51,7 @@ const Home = () => {
                             <div className="peli" key={peli.id}>
                                 <img alt={peli.id} className="cartel" onClick={()=>escogePelicula(peli)} src={`https://image.tmdb.org/t/p/original/${peli.poster_path}`}/>
                                 <div className="designTitlemovie" onClick={()=>escogePelicula(peli)}>{peli.title}</div>
+                                <div className="designValue">{peli.vote_average}⭐</div>
                             </div>
                             
                         )
@@ -64,7 +65,7 @@ const Home = () => {
 
         return (
             <div>
-                <img className="loader" src={cargando}/>
+                <img className="loader" src={loading}/>
             </div>
         )
     }

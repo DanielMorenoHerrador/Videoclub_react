@@ -8,6 +8,9 @@ import Profile from './Containers/Profile/Profile';
 import Register from './Containers/Register/Register';
 import Nav from './Components/Barranaveg/Nav';
 import Peliculas from './Containers/Peliculas/Peliculas';
+import Perfilpelicula from './Containers/Perfilpelicula/Perfilpelicula';
+import Peliculasdisponibles from './Containers/Peliculasdisponibles/Peliculasdisponibles';
+import Pedidos from './Containers/Pedidos/Pedidos';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/peliculas" element={<Peliculas/>}/>
+          <Route path="/perfilpelicula" element={<Perfilpelicula/>}/>
+          <Route path="/peliculasdisponibles" element={<Peliculasdisponibles/>}/>
+          <Route path="/pedidos" element={<Pedidos/>}/>
 
 
         </Routes>

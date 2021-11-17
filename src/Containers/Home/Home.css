@@ -1,18 +1,18 @@
 body {
-    background-color: yellow;
+    background-image: url(/src/assets/img/fondo.jpg);
 }
 
 .loader {
-    
-    height: 40em;
-    width: 70em;
+    margin-top: 15em;
+    height: 10em;
+    width: 10em;
 }
 
 .displayPeliculas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 1em 20em 1em 20em;
-    background-color: yellow;
+    background-color: transparent(255, 255, 42);
 }
 
 .peli {
@@ -36,4 +36,10 @@ body {
     margin-bottom: 1.5em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
+}
+
+.designValue {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
