@@ -41,7 +41,7 @@ const Register = () => {
 
     //Funciones
 
-    const enviaDatosRegistro = async () => {
+    const enviaDatosRegistro = async (registroexito) => {
         //Comprobación de errores en los datos
 
         if (! /[a-z]/gi.test(user.name)) {
@@ -75,8 +75,6 @@ const Register = () => {
 
             let res = await axios.post("http://localhost:4000/users/signup", body);
             setUser(res.data);
-
-            //Guardado de datos en localStorage
 
 
         } catch (error) {

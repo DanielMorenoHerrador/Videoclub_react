@@ -11,24 +11,26 @@ const Perfilpelicula = (props) => {
     // };
     const history = useNavigate();
 
-    const [pelicula, setPelicula] = useState(
-        JSON.parse(localStorage.getItem("escogerPelicula"))
-    );
+    //Hooks
+
+    const [pelicula, setPelicula] = useState(JSON.parse(localStorage.getItem("escogerPelicula")));
+    const [pedido, setPedido] = useState({ userId: '', peliculaId: '' });
     
+
+    //UseEFFECT
+
     useEffect(() => {
-        console.log(props.datos_pelicula);
-    }, []);
+    
+    }, [props]);
 
-    //Hook
-
-    const [alquilarpelicula, setAlquilarpelicula] = useState(<button className="botonalqui" onClick={() => order()}>ALQUILAR PELICULA</button>);
+    useEffect(() => {
+    
+    });
 
     //crear nuevo pedido
-    const order = async (props) => {
-        //console.log("la id de la peli que voy a pedir es......",peli.id);
-        //Generación del body
-        let body = {
+    const order = async () => {
 
+        let body = {
             userId: props.credentials.user.id,
             peliculaId: pelicula.id,
             
@@ -41,20 +43,13 @@ const Perfilpelicula = (props) => {
         try {
 
             let res = await axios.post("http://localhost:4000/pedidos", body, {
+            
                 headers: {
                     'Authorization': `Bearer ${props.credentialsReducer.token}`
-                }
-            });
-
-            // let datos = res.data;
-            // localStorage.getItem("escogerPelicula", JSON.stringify(escogerLaPelicula));
-
-
-
-
-
-            setAlquilarpelicula("✓ Pelicula alquilada");
-
+                },
+            })
+            setPedido(res.data);
+            ;
 
             setTimeout(() => {
                 history("/profile");
