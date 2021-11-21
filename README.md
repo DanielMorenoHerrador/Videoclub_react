@@ -1,4 +1,31 @@
-# Getting Started with Create React App
+# VIDEORADOS :movie_camera:
+
+## PROYECTO VIDEOCLUB FRONTEND
+
+## TECNOLOGIAS EMPLEADAS:
+- React
+- Redux
+
+Este proyecto consiste en una web de un videoclub en el que puedes crear un usuario, logearte con él mismo y poder crear pedidos con las peliculas disponibles en la web
+¡ESPERO QUE OS GUSTE!
+
+![image](https://user-images.githubusercontent.com/90707206/142781462-ca6b7e98-4648-4a3b-9557-025506648796.png)
+
+### Ejemplo de vista del Home
+
+
+![image](https://user-images.githubusercontent.com/90707206/142781508-e0c6b68b-78c8-4b55-a2a5-84e867abf990.png)
+
+### Ejemplo de la pagina de registro
+
+
+![image](https://user-images.githubusercontent.com/90707206/142781539-8109d8d0-d818-4e3f-927f-8bf44afcea92.png)
+
+## Ejemplo de la pagina de login
+
+-----------------------------------------------------------------------------------------------------------------------
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
