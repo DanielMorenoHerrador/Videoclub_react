@@ -18,7 +18,7 @@ const Register = () => {
         city: '',
         cp: 0,
         password: '',
-        password2: '',
+        repeat_password: '',
         phone: ''
     });
 
@@ -57,15 +57,14 @@ const Register = () => {
         //Generación del body
         let body = {
             name: user.name,
-            // surname: user.surname,
-            // dni: user.dni,
+            dni: user.dni,
             email: user.email,
-            // address: user.address,
-            // city: user.city,
-            // cp: user.cp,
+            address: user.address,
+            city: user.city,
+            cp: user.cp,
             password: user.password,
-            // password2: user.password2,
-            // phone: user.phone
+            repeat_password: user.repeat_password,
+            phone: user.phone
         }
 
         //Conexion a axios y envio de datos
@@ -75,7 +74,7 @@ const Register = () => {
         try {
 
             let res = await axios.post("http://localhost:4000/users/signup", body);
-            console.log(res.data);
+            setUser(res.data);
 
             //Guardado de datos en localStorage
 
@@ -91,7 +90,7 @@ const Register = () => {
         setmsgError("Usuario registrado con éxito");
 
         setTimeout(() => {
-            history("/");
+            history("/login");
         }, 4000);
     };
 
@@ -101,7 +100,6 @@ const Register = () => {
         <div className="designRegister">
             {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
             <input type='text' name='name' title='name' onChange={userHandler} lenght='30' placeholder='Nombre' />
-            <input type='text' name='surname' title='surname' onChange={userHandler} lenght='30' placeholder='Apellido' />
             <input type='text' name='dni' title='dni' onChange={userHandler} lenght='10' placeholder='DNI' />
             <input type='email' name='email' title='email' onChange={userHandler} lenght='30' placeholder='Email' />
             <input type='text' name='address' title='address' onChange={userHandler} lenght='30' placeholder='Direccion' />

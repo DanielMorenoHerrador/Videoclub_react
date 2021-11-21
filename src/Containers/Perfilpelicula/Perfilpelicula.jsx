@@ -24,28 +24,14 @@ const Perfilpelicula = (props) => {
     const [alquilarpelicula, setAlquilarpelicula] = useState(<button className="botonalqui" onClick={() => order()}>ALQUILAR PELICULA</button>);
 
     //crear nuevo pedido
-    const order = async () => {
+    const order = async (props) => {
         //console.log("la id de la peli que voy a pedir es......",peli.id);
         //Generación del body
         let body = {
 
-
-            nombre_cliente: props.credentialsReducer.user.name,
-            email_cliente: props.credentialsReducer.user.email,
-            id_cliente: props.credentialsReducer.user._id,
-            name_film: props.datos_pelicula.title,
-            id_film: props.datos_pelicula.id,
-            name_original_film: props.datos_pelicula.original_title,
-            fecha_recogida: new Date(),
-            release_data: props.datos_pelicula.release_date,
-            overview: props.datos_pelicula.overview,
-            release_date: props.datos_pelicula.release_date,
-
-
-            /*numero: user.name,
-            dependiente: user.email,
-            fecha_recogida: user.password,
-            fecha_entrega: user.telf,*/
+            userId: props.credentials.user.id,
+            peliculaId: pelicula.id,
+            
         }
 
         //Conexion a axios y envio de datos
@@ -85,12 +71,14 @@ const Perfilpelicula = (props) => {
 
     return (
         <div className="profilePelicula">
-            <div className="perfilpelicula"><p>{pelicula.title}</p></div>
-            <div className="perfilpelicula"><img alt={pelicula.poster_path} className="cartel" src={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`} /></div>
-            <div className="perfilpelicula"><p>{pelicula.vote_average}⭐</p></div>
-            <div className="perfilpelicula"><p>{pelicula.release_date}</p></div>
-            <div className="perfilpelicula"><p>{pelicula.overview}</p></div>
-            <button className="botonalqui" onClick={() => order()}>ALQUILAR PELICULA</button>
+                <div className="perfilpelicula"><p>{pelicula.title}</p></div>
+                <div className="perfilpelicula"><img alt={pelicula.poster_path} className="cartel" src={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`} /></div>
+            <div className="fichapelicula">
+                <div className="perfilpelicula"><p>{pelicula.vote_average}⭐</p></div>
+                <div className="perfilpelicula"><p>{pelicula.release_date}</p></div>
+                <div className="perfilpelicula"><p>{pelicula.overview}</p></div>
+                <button className="botonalqui" onClick={() => order()}>ALQUILAR PELICULA</button>
+            </div>
         </div>
 
     )

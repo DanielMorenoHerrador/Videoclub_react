@@ -6,3 +6,9 @@
     justify-content: center;
 }
 
+.fichapelicula{
+    height: 10em;
+    width: 10em;
+    background-color: white;
+    border: 1em solid black;
+}
