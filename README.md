@@ -23,6 +23,9 @@ Este proyecto consiste en una web de un videoclub en el que puedes crear un usua
 
 ## Ejemplo de la pagina de login
 
+
+### Enlace AWS: https://main.de4l54uzkpdac.amplifyapp.com/
+
 -----------------------------------------------------------------------------------------------------------------------
 
 ## Getting Started with Create React App
