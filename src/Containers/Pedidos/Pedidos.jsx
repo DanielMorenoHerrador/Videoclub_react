@@ -16,7 +16,7 @@ const Pedidos = (props) => {
             );
             setPedidos(res.data);
         } catch (error) {
-            setmsgError("Order not found");
+            setmsgError("No se ha podido crear el pedido");
         }
     };
 

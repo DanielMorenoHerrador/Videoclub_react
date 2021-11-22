@@ -5,3 +5,26 @@
     color: black;
     margin-top: 20em;
 }
+
+.designProfileone {
+    margin-top: 8em;
+}
+
+.logOut {
+    width: 5em;
+    border: solid black;
+    background-color: white;
+}
+
+.update {
+    width: 5em;
+    border: solid black;
+    background-color: white;
+}
+
+.botoneslogoutupdate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

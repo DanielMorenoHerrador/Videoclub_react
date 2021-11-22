@@ -36,15 +36,17 @@ const Profile = (props) => {
     if (props.credentials?.token !== '') {
         return (
             console.log("Estas en perfil"),
-            <div className="designProfile">
+            <div className="designProfileone">
+                <div className="botoneslogoutupdate">
+                    <div className="logOut" onClick={() => logOut()}>LOGOUT</div>
+                    <div className="update" onClick={() => update()}>UPDATE</div>
+                </div>
                 <div className="user"><input value={userData?.name || false} name="name" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.city || false} name="city" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.email || false} name="email" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.phone || false} name="phone" onChange={manejaInputs} /></div>
                 <div className="user"><input value={userData?.adress || false} name="adress" onChange={manejaInputs} /></div>
-                <div className="logOut" onClick={() => logOut()}>LOGOUT</div>
-                <div className="update" onClick={() => update()}>UPDATE</div>
-            </div>
+                </div>
         )
 
     } else {

@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 
 const Perfilpelicula = (props) => {
 
-    // let token = {
-    //     headers: { Authorization: `Bearer ${props.credentials.token}` },
-    // };
     const history = useNavigate();
 
     //Hooks
@@ -21,7 +18,7 @@ const Perfilpelicula = (props) => {
 
     useEffect(() => {
     
-    }, [props]);
+    },[]);
 
     useEffect(() => {
     
@@ -42,12 +39,7 @@ const Perfilpelicula = (props) => {
 
         try {
 
-            let res = await axios.post("http://localhost:4000/pedidos", body, {
-            
-                headers: {
-                    'Authorization': `Bearer ${props.credentialsReducer.token}`
-                },
-            })
+            let res = await axios.post("http://localhost:4000/pedidos", body)
             setPedido(res.data);
             ;
 
@@ -66,12 +58,12 @@ const Perfilpelicula = (props) => {
 
     return (
         <div className="profilePelicula">
-                <div className="perfilpelicula"><p>{pelicula.title}</p></div>
-                <div className="perfilpelicula"><img alt={pelicula.poster_path} className="cartel" src={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`} /></div>
+                <div className="titulopelicula"><p>{pelicula.title}</p></div>
+                <div className="posterpelicula"><img alt={pelicula.poster_path} className="cartel" src={`https://image.tmdb.org/t/p/original/${pelicula.poster_path}`} /></div>
             <div className="fichapelicula">
-                <div className="perfilpelicula"><p>{pelicula.vote_average}⭐</p></div>
-                <div className="perfilpelicula"><p>{pelicula.release_date}</p></div>
-                <div className="perfilpelicula"><p>{pelicula.overview}</p></div>
+                <div className="valoracionpelicula"><p>{pelicula.vote_average}⭐</p></div>
+                <div className="fechapelicula"><p>{pelicula.release_date}</p></div>
+                <div className="descripcionpelicula"><p>{pelicula.overview}</p></div>
                 <button className="botonalqui" onClick={() => order()}>ALQUILAR PELICULA</button>
             </div>
         </div>
