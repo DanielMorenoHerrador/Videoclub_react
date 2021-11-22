@@ -31,12 +31,11 @@ const Register = () => {
     //useEffect
 
     useEffect(() => {
-        //UseEffect que se ejecuta sólo una vez al montarse. (1a vez).
+        
 
     }, []);
 
     useEffect(() => {
-        //UseEffect que se ejecutará CADA VEZ que se actualize el estado.(renderizando de nuevo).
     });
 
     //Funciones

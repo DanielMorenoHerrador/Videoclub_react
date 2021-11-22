@@ -52,7 +52,7 @@ const Perfilpelicula = (props) => {
             ;
 
             setTimeout(() => {
-                history("/profile");
+                history("/");
             }, 2000);
 
 
