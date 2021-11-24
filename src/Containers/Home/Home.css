@@ -20,6 +20,8 @@ body {
     background-color: blue;
     border: 0.1em solid black;
     margin: 0.1em;
+    margin-top: 3em;
+    width: 20em;
 }
 
 .cartel {
@@ -42,4 +44,20 @@ body {
     font-size: 2em;
     margin-bottom: 1.5em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.buscador{
+    margin-top: 2em;
+    height: 2em;
+    width: 13.5em;
+}
+
+input.buscarpeli {
+    height: 3em;
+    margin: auto;
+    width: 40em;
+    color: black;
+    text-align: center;
+    display: flex;
+    font-size: 1.2em;
 }

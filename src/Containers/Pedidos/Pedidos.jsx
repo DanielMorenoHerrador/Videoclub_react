@@ -11,12 +11,10 @@ const Pedidos = (props) => {
 
     const traerPedidos = async () => {
         try {
-            let res = await axios.get(
-                "http://localhost:4000/pedidos"
-            );
-            setPedidos(res.data);
+            let res = await axios.get("http://localhost:4000/pedidos");
+                setPedidos(res.data);
         } catch (error) {
-            setmsgError("No se ha podido crear el pedido");
+            setmsgError("No se ha podido traer los pedidos");
         }
     };
 
