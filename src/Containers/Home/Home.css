@@ -49,7 +49,9 @@ body {
 .buscador{
     margin-top: 2em;
     height: 2em;
-    width: 13.5em;
+    width: 15em;
+    border: solid black;
+    text-align: center;
 }
 
 input.buscarpeli {
@@ -60,4 +62,11 @@ input.buscarpeli {
     text-align: center;
     display: flex;
     font-size: 1.2em;
+}
+
+.container-buscador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

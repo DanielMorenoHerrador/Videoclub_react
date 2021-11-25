@@ -76,10 +76,10 @@ const Home = (props) => {
             <div className='container-home'>
                 <div>
 
-                    <div className="container-title-search pt-5">
+                    <div className="container-buscador">
                         <input className="buscador" type="text" name="film" onChange={buscarPeliculas} title="film" lenght="30" placeholder="Escribe una pelicula a buscar" />
                     </div>
-                    <div className="container-buscador">
+                    <div className="container-pelisbuscadas">
 
 
                         {buscador.length > 0 &&
