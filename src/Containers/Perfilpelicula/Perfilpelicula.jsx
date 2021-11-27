@@ -25,12 +25,13 @@ const Perfilpelicula = (props) => {
     });
 
     //crear nuevo pedido
-    const order = async () => {
-
+    const order = async (pelicula) => {
+        console.log(pelicula);
         let body = {
             userId: props.credentials.user.id,
             peliculaId: pelicula.id,
-            
+            alquiler: new Date(),
+            devolucion: new Date()
         }
 
         //Conexion a axios y envio de datos
@@ -39,7 +40,7 @@ const Perfilpelicula = (props) => {
 
         try {
 
-            let res = await axios.post("http://localhost:4000/pedidos", body)
+            let res = await axios.post("https://videoclub1.herokuapp.com/pedidos", body)
             setPedido(res.data);
             ;
 

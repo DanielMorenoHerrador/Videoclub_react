@@ -72,7 +72,7 @@ const Register = () => {
 
         try {
 
-            let res = await axios.post("http://localhost:4000/users/signup", body);
+            let res = await axios.post("https://videoclub1.herokuapp.com/users/signup", body);
             setUser(res.data);
 
 
