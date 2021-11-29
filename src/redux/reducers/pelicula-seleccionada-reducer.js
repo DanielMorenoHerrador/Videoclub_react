@@ -1,8 +1,9 @@
 
-import {PELICULA_SELECCIONADA} from '../types';
+import {PELICULA_SELECCIONADA, ORDER} from '../types';
 
 const initialState = {
-    pelicula : ''
+    pelicula : '',
+    pedido : ''
 
 };
 
@@ -12,6 +13,12 @@ const datos_pelicula = (state = initialState, action) => {
         //Ejemplo de añadido de datos
         case PELICULA_SELECCIONADA :
             return action.payload;
+
+        case ORDER :
+                return {
+                ...state,
+                pedido:action.payload
+                };
 
         default :
             return state

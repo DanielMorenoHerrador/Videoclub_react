@@ -16,6 +16,9 @@ const Nav = (props) => {
                 </div>
                 <div className="tit">VIDEORADOS <img className="logo" src={Img} />
                 </div>
+                <div className="TodosLosPedidos">
+                    <View destino="TODOSLOSPEDIDOS" url="/todoslospedidos" />
+                </div>
                 <div className="Pedidos">
                     <View destino="PEDIDOS" url="/pedidos" />
                 </div>

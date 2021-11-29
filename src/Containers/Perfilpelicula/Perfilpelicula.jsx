@@ -3,12 +3,24 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { ORDER } from '../../redux/types';
 
 
 const Perfilpelicula = (props) => {
 
+    let token = {
+        headers: { Authorization: `Bearer ${props.credentials.token}` },
+    };
+
     const history = useNavigate();
 
+
+    useEffect(() => {
+
+    },);
+
+    useEffect(() => {
+    }, []);
     //Hooks
 
     const [pelicula, setPelicula] = useState(JSON.parse(localStorage.getItem("escogerPelicula")));
@@ -16,21 +28,10 @@ const Perfilpelicula = (props) => {
     const [user, setUser] = useState([props.credentials.user]);
 
     console.log(user)
-
-    //UseEFFECT
-
-    // useEffect(() => {
-        
-    // },[]);
-
-    // useEffect(() => {
-        
-    // });
-
-    //crear nuevo pedido
     console.log(pelicula);
-    
-    const order = async (user) => {
+
+    //crear nuevo pedido    
+    const order = async () => {
         let body = {
             userId: props.credentials.user.id,
             peliculaId: pelicula.id,
@@ -39,13 +40,14 @@ const Perfilpelicula = (props) => {
         }
 
         //Conexion a axios y envio de datos
-        console.log("ENVIANDO AL BACKEND ESTO....", body);
+        console.log("ENVIANDO AL BACKEND ESTO....", body, token);
 
 
         try {
 
-            let res = await axios.post("https://videoclub1.herokuapp.com/pedidos", body)
-            setPedido(res.data);
+            let res = await axios.post("https://videoclub1.herokuapp.com/pedidos", body, token);
+            console.log("Pedido realizado");
+            props.dispatch({ type: ORDER, payload:res.data });
             ;
 
             setTimeout(() => {
@@ -55,6 +57,7 @@ const Perfilpelicula = (props) => {
 
 
         } catch (error) {
+            console.log('No se ha creado el pedido, error')
             console.log(error)
         }
     }
@@ -78,5 +81,6 @@ const Perfilpelicula = (props) => {
 }
 
 export default connect((state) => ({
+    pelicula: state.pelicula,
     credentials: state.credentials,
 }))(Perfilpelicula);
