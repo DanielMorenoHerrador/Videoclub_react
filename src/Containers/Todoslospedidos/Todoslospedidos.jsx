@@ -30,24 +30,23 @@ const TodosLosPedidos = (props) => {
             setmsgError("No se ha podido traer los pedidos");
         }
     };
-
+    console.log(pedidos);
     if (pedidos[1]?.userId) {
         return (
         <div className="designPedidos">
             {pedidos.map((pedido) => {
                 return (
                     <div key={pedido.id} className="pedidosContainer">
-                        <h4>pedido Number: {pedido.id}</h4>
-                        <p>User Name: {pedido.user}</p>
+                        <h4>Numero de pedido: {pedido.id}</h4>
                         <p>User ID: {pedido.userId}</p>
-                        <p>Rented pelicula: {pedido.pelicula?.id}</p>
                         <p>pelicula ID: {pedido.peliculaId}</p>
+                        <p>Fecha de creacion del pedido: {pedido.rentDate}</p>
                     </div>
                 );}
         )
         
     } </div>
-        )}  else {
+    )}  else {
 
         return (
             <div>
