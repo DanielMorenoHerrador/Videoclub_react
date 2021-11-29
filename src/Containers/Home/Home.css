@@ -1,5 +1,5 @@
 body {
-    background-image: url(/src/assets/img/fondo.jpg);
+    background-color: rgb(252, 252, 74);
 }
 
 .loader {
@@ -17,7 +17,7 @@ body {
 
 .peli {
     border-radius : 2em;
-    background-color: blue;
+    background-color: rgb(34, 34, 255);
     border: 0.1em solid black;
     margin: 0.1em;
     margin-top: 3em;
