@@ -9,7 +9,7 @@ import Register from './Containers/Register/Register';
 import Nav from './Components/Barranaveg/Nav';
 import Peliculas from './Containers/Peliculas/Peliculas';
 import Perfilpelicula from './Containers/Perfilpelicula/Perfilpelicula';
-import Peliculasdisponibles from './Containers/Peliculasdisponibles/Peliculasdisponibles';
+import TodosLosPedidos from './Containers/Todoslospedidos/Todoslospedidos';
 import Pedidos from './Containers/Pedidos/Pedidos';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/peliculas" element={<Peliculas/>}/>
           <Route path="/perfilpelicula" element={<Perfilpelicula/>}/>
-          <Route path="/peliculasdisponibles" element={<Peliculasdisponibles/>}/>
+          <Route path="/peliculasdisponibles" element={<TodosLosPedidos/>}/>
           <Route path="/pedidos" element={<Pedidos/>}/>
 
 

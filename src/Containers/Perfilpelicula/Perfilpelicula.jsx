@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
 const Perfilpelicula = (props) => {
 
     const history = useNavigate();
@@ -11,27 +12,30 @@ const Perfilpelicula = (props) => {
     //Hooks
 
     const [pelicula, setPelicula] = useState(JSON.parse(localStorage.getItem("escogerPelicula")));
-    const [pedido, setPedido] = useState({ userId: '', peliculaId: '' });
-    
+    const [pedido, setPedido] = useState([]);
+    const [user, setUser] = useState([props.credentials.user]);
+
+    console.log(user)
 
     //UseEFFECT
 
-    useEffect(() => {
-    
-    },[]);
+    // useEffect(() => {
+        
+    // },[]);
 
-    useEffect(() => {
-    
-    });
+    // useEffect(() => {
+        
+    // });
 
     //crear nuevo pedido
-    const order = async (pelicula) => {
-        console.log(pelicula);
+    console.log(pelicula);
+    
+    const order = async (user) => {
         let body = {
             userId: props.credentials.user.id,
             peliculaId: pelicula.id,
-            alquiler: new Date(),
-            devolucion: new Date()
+            rentDate: new Date(),
+            returnDate: new Date()
         }
 
         //Conexion a axios y envio de datos
@@ -45,7 +49,7 @@ const Perfilpelicula = (props) => {
             ;
 
             setTimeout(() => {
-                history("/");
+                history("/pedidos");
             }, 2000);
 
 
@@ -74,6 +78,5 @@ const Perfilpelicula = (props) => {
 }
 
 export default connect((state) => ({
-    datos_pelicula: state.datos_pelicula,
-    credentialsReducer: state.credentialsReducer
+    credentials: state.credentials,
 }))(Perfilpelicula);

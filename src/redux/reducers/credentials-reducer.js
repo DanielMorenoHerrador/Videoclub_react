@@ -2,8 +2,8 @@
 import {LOGIN, LOGOUT, UPDATE_USER} from '../types';
 
 const initialState = {
+    user : {},
     token : '',
-    usuario : {}
 };
 
 const credentialsReducer = (state = initialState, action) => {
@@ -18,7 +18,7 @@ const credentialsReducer = (state = initialState, action) => {
 
         //Ejemplo de modificacion de datos
         case UPDATE_USER :
-            return {...state, usuario: action.payload};
+            return {...state, user: action.payload};
             
         default :
             return state
